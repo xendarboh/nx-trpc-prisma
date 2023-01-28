@@ -71,8 +71,8 @@ const IndexPage: NextPageWithLayout = () => {
            * @link https://react-hook-form.com/
            */
 
-          const $text: HTMLInputElement = (e as any).target.elements.text;
-          const $title: HTMLInputElement = (e as any).target.elements.title;
+          const $text: HTMLInputElement = (e as any).target.elements.text; // eslint-disable-line @typescript-eslint/no-explicit-any
+          const $title: HTMLInputElement = (e as any).target.elements.title; // eslint-disable-line @typescript-eslint/no-explicit-any
           const input = {
             title: $title.value,
             text: $text.value,

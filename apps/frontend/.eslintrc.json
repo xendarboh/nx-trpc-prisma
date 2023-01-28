@@ -5,12 +5,15 @@
     "next/core-web-vitals",
     "../../.eslintrc.json"
   ],
-  "ignorePatterns": ["!**/*"],
+  "ignorePatterns": ["!**/*", ".next/**/*"],
   "overrides": [
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
       "rules": {
-        "@next/next/no-html-link-for-pages": ["error", "apps/frontend/pages"]
+        "@next/next/no-html-link-for-pages": [
+          "error",
+          "apps/frontend/src/pages"
+        ]
       }
     },
     {
@@ -22,9 +25,6 @@
       "rules": {}
     }
   ],
-  "rules": {
-    "@next/next/no-html-link-for-pages": "off"
-  },
   "env": {
     "jest": true
   }
