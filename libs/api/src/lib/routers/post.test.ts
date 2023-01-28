@@ -29,3 +29,11 @@
 //    * Is this good? If not, what's a good alternative?
 //    */
 // });
+
+// at least one test required
+describe('placeholder', () => {
+  it('should do nothing', () => {
+    const x = true;
+    expect(x).toBeTruthy();
+  });
+});
