@@ -37,7 +37,7 @@ export const postRouter = t.router({
     .input(
       z.object({
         id: z.string(),
-      }),
+      })
     )
     .query(async ({ input }) => {
       const { id } = input;
@@ -59,7 +59,7 @@ export const postRouter = t.router({
         id: z.string().uuid().optional(),
         title: z.string().min(1).max(32),
         text: z.string().min(1),
-      }),
+      })
     )
     .mutation(async ({ input }) => {
       const post = await prisma.post.create({

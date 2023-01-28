@@ -1,11 +1,11 @@
-import {httpBatchLink, loggerLink} from '@trpc/client';
-import {createTRPCNext} from '@trpc/next';
-import type {inferProcedureInput, inferProcedureOutput} from '@trpc/server';
-import {NextPageContext} from 'next';
+import { httpBatchLink, loggerLink } from '@trpc/client';
+import { createTRPCNext } from '@trpc/next';
+import type { inferProcedureInput, inferProcedureOutput } from '@trpc/server';
+import { NextPageContext } from 'next';
 import superjson from 'superjson';
 // ℹ️ Type-only import:
 // https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-8.html#type-only-imports-and-export
-import type {AppRouter} from '@trpc-test/api';
+import type { AppRouter } from '@trpc-test/api';
 
 function getBaseUrl() {
   if (typeof window !== 'undefined') {
@@ -112,17 +112,17 @@ export const trpc = createTRPCNext<AppRouter, SSRContext>({
  * @example type HelloOutput = inferQueryOutput<'hello'>
  */
 export type inferQueryOutput<
-  TRouteKey extends keyof AppRouter['_def']['queries'],
+  TRouteKey extends keyof AppRouter['_def']['queries']
 > = inferProcedureOutput<AppRouter['_def']['queries'][TRouteKey]>;
 
 export type inferQueryInput<
-  TRouteKey extends keyof AppRouter['_def']['queries'],
+  TRouteKey extends keyof AppRouter['_def']['queries']
 > = inferProcedureInput<AppRouter['_def']['queries'][TRouteKey]>;
 
 export type inferMutationOutput<
-  TRouteKey extends keyof AppRouter['_def']['mutations'],
+  TRouteKey extends keyof AppRouter['_def']['mutations']
 > = inferProcedureOutput<AppRouter['_def']['mutations'][TRouteKey]>;
 
 export type inferMutationInput<
-  TRouteKey extends keyof AppRouter['_def']['mutations'],
+  TRouteKey extends keyof AppRouter['_def']['mutations']
 > = inferProcedureInput<AppRouter['_def']['mutations'][TRouteKey]>;

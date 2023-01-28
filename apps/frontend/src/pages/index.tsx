@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
-import {trpc} from '../utils/trpc';
-import {NextPageWithLayout} from './_app';
+import { trpc } from '../utils/trpc';
+import { NextPageWithLayout } from './_app';
 
 const IndexPage: NextPageWithLayout = () => {
   const utils = trpc.useContext();
@@ -54,9 +54,7 @@ const IndexPage: NextPageWithLayout = () => {
       {postsQuery.data?.map((item) => (
         <article key={item.id}>
           <h3>{item.title}</h3>
-          <Link href={`/post/${item.id}`}>
-              View more
-          </Link>
+          <Link href={`/post/${item.id}`}>View more</Link>
         </article>
       ))}
 
